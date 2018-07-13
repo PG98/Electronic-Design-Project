@@ -1,0 +1,119 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+# Date created = 21:27:28  August 28, 2017
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		reciever_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C5Q208C8
+set_global_assignment -name TOP_LEVEL_ENTITY receiver
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:27:28  AUGUST 28, 2017"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 208
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_131 -to clk
+set_location_assignment PIN_39 -to DIG[3]
+set_location_assignment PIN_37 -to DIG[2]
+set_location_assignment PIN_36 -to DIG[1]
+set_location_assignment PIN_35 -to DIG[0]
+set_location_assignment PIN_56 -to err
+set_location_assignment PIN_59 -to led[4]
+set_location_assignment PIN_60 -to led[3]
+set_location_assignment PIN_61 -to led[2]
+set_location_assignment PIN_63 -to led[1]
+set_location_assignment PIN_64 -to led[0]
+set_location_assignment PIN_44 -to OL[6]
+set_location_assignment PIN_40 -to OL[5]
+set_location_assignment PIN_45 -to OL[4]
+set_location_assignment PIN_47 -to OL[3]
+set_location_assignment PIN_48 -to OL[2]
+set_location_assignment PIN_41 -to OL[1]
+set_location_assignment PIN_43 -to OL[0]
+set_location_assignment PIN_146 -to rxd
+set_location_assignment PIN_10 -to ctrl[5]
+set_location_assignment PIN_8 -to ctrl[4]
+set_location_assignment PIN_6 -to ctrl[3]
+set_location_assignment PIN_5 -to ctrl[2]
+set_location_assignment PIN_4 -to ctrl[1]
+set_location_assignment PIN_3 -to ctrl[0]
+set_location_assignment PIN_12 -to send
+set_location_assignment PIN_149 -to txd
+set_location_assignment PIN_13 -to C[3]
+set_location_assignment PIN_14 -to C[2]
+set_location_assignment PIN_15 -to C[1]
+set_location_assignment PIN_30 -to C[0]
+set_location_assignment PIN_31 -to R[3]
+set_location_assignment PIN_32 -to R[2]
+set_location_assignment PIN_33 -to R[1]
+set_location_assignment PIN_34 -to R[0]
+set_location_assignment PIN_151 -to beep
+set_location_assignment PIN_144 -to infra
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_195 -to col[7]
+set_location_assignment PIN_76 -to col[6]
+set_location_assignment PIN_80 -to col[5]
+set_location_assignment PIN_187 -to col[4]
+set_location_assignment PIN_84 -to col[3]
+set_location_assignment PIN_189 -to col[2]
+set_location_assignment PIN_200 -to col[1]
+set_location_assignment PIN_203 -to col[0]
+set_location_assignment PIN_182 -to row[7]
+set_location_assignment PIN_198 -to row[6]
+set_location_assignment PIN_90 -to row[5]
+set_location_assignment PIN_192 -to row[4]
+set_location_assignment PIN_70 -to row[3]
+set_location_assignment PIN_87 -to row[2]
+set_location_assignment PIN_74 -to row[1]
+set_location_assignment PIN_82 -to row[0]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE dotarray.v
+set_global_assignment -name VERILOG_FILE monitor.v
+set_global_assignment -name VERILOG_FILE txd.v
+set_global_assignment -name VERILOG_FILE rxd.v
+set_global_assignment -name BDF_FILE receiver.bdf
+set_global_assignment -name VERILOG_FILE buffer.v
+set_global_assignment -name VERILOG_FILE keyboard.v
+set_global_assignment -name VERILOG_FILE control.v
+set_global_assignment -name VERILOG_FILE defreq.v
+set_global_assignment -name VERILOG_FILE main.v
