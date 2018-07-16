@@ -7,7 +7,6 @@ module rxd(clk_9600Hz, rxd, c, recieve, err);
 	reg[7:0] q;
 	reg flag;
 	reg[3:0] count;
-	// ???????
 	always@(posedge clk_9600Hz)
 	begin
 		if(flag==0) begin //not recieving

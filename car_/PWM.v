@@ -8,8 +8,7 @@ module PWM
 );
 reg [7:0] cnt;
 
-// cnt: 0 --> 100 循环自增
-// T = 100, q = speed/100
+
 always @(posedge clk_10k) begin
 	if (cnt>=100) cnt =0; 
 	else begin

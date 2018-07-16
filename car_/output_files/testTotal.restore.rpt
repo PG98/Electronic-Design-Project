@@ -1,5 +1,5 @@
 Restore Archived Project report for testTotal
-Mon Jul 02 21:54:22 2018
+Sun Jul 15 20:22:53 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Mon Jul 02 21:54:22 2018 ;
+; Restore Archived Project Status ; Successful - Sun Jul 15 20:22:52 2018 ;
 ; Revision Name                   ; testTotal                             ;
 ; Top-level Entity Name           ; top                                   ;
 ; Family                          ; Cyclone II                            ;
@@ -46,13 +46,13 @@ applicable agreement for further details.
 +-----------------------------------+
 ; Restore Archived Project Messages ;
 +-----------------------------------+
-Info: Successfully restored 'C:/MyDownloads/yinqy15/testTotal.qar' into the 'C:/MyDownloads/yinqy15/testTotal/' directory
+Info: Successfully restored 'C:/MyDownloads/analogEXP/testTotal.qar' into the 'C:/MyDownloads/analogEXP/car_/' directory
 Info: Generated report 'testTotal.restore.rpt'
 Info (23030): Evaluation of Tcl script c:/altera/13.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 335 megabytes
-    Info: Processing ended: Mon Jul 02 21:54:22 2018
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sun Jul 15 20:22:53 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
