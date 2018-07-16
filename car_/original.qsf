@@ -85,12 +85,12 @@ set_location_assignment PIN_10 -to Button[2]
 set_location_assignment PIN_11 -to Button[1]
 set_location_assignment PIN_12 -to Button[0]
 set_location_assignment PIN_205 -to steer
-set_location_assignment PIN_96 -to pwml
-set_location_assignment PIN_95 -to pwmr
+set_location_assignment PIN_199 -to pwml
+set_location_assignment PIN_201 -to pwmr
 set_location_assignment PIN_150 -to Infrared[0]
 set_location_assignment PIN_163 -to Infrared[1]
-set_location_assignment PIN_162 -to ultra_trigger
-set_location_assignment PIN_161 -to ultra_2
+set_location_assignment PIN_169 -to ultra_trigger
+set_location_assignment PIN_165 -to ultra_2
 set_location_assignment PIN_70 -to Touch[2]
 set_location_assignment PIN_160 -to Touch[1]
 set_location_assignment PIN_69 -to Touch[3]
@@ -137,4 +137,7 @@ set_global_assignment -name VERILOG_FILE testSpeed.v
 set_global_assignment -name VERILOG_FILE lcd.v
 set_global_assignment -name VERILOG_FILE lcd2.v
 set_global_assignment -name VERILOG_FILE blueTooth.v
+set_global_assignment -name VERILOG_FILE avoidance.v
+set_location_assignment PIN_171 -to ultra_right_trigger
+set_location_assignment PIN_170 -to ultraright_echo
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -10,6 +10,9 @@ module main
 	input [3:0] touch,//触碰
 	input [3:0] infrared,//红外
 	input [3:0] signs,//摄像头
+	input [7:0] dir,
+	input mode,
+	input [7:0] speed_ctr,
 	output reg [7:0] speed,
 	output reg [8:0] degree,
 	output reg direction,
@@ -44,6 +47,12 @@ reg [1:0] mystate;//自己的状态
 reg resetState;
 reg isSet;
 
+reg clk_9600;
+reg clk_10k;
+reg[11:0] cnt10k;
+reg [12:0] clk_count;
+
+
 initial begin
 	speed=28;
 	degree=60;
@@ -77,11 +86,35 @@ initial begin
 	isSet=0;
 	lcd_state=3'b111;
 end
+
+// 9600Hz divider
+always@(posedge clk_50M)
+begin
+	if(clk_count == 13'd2603)
+	begin
+		clk_count <= 0;
+		clk_9600 <= ~clk_9600;
+	end
+	else
+		clk_count <= clk_count + 1'b1;
+		
+	if(cnt10k<2499)
+		cnt10k<=cnt10k+1;
+	else
+	begin
+		cnt10k<=0;
+		clk_10k=~clk_10k;
+	end
+end
+
+
+
 // 是否改成 10k 频率
 always @ (posedge clk_50M) begin
 	//display=inspeed;
 	//speed=button;
 	led[6:5]=state;
+	display = forwardDistance;
 	if(state==0) begin// 完全控制(红色)
 	/*
 		lcd_state=3'b100;
@@ -105,21 +138,32 @@ always @ (posedge clk_50M) begin
 			1'b1: direction=0;
 		endcase
 	*/
-		if (receiveData[3:2]==2'b01) degree=30;
-		else if(receiveData[3:2]==2'b10)degree=120;
-		else degree=60;
+		//遥控
+		if(receiveData[5:4]==2'b00) begin
+			if (receiveData[3:2]==2'b01) degree=30;
+			else if(receiveData[3:2]==2'b10)degree=90;
+			else degree=60;
 
-		if (forwardDistance>10 && receiveData[1:0]==2'b01) begin
-			speed = 35;
-			direction = 1;
+			if (forwardDistance>20 && receiveData[1:0]==2'b01) begin
+				speed = 35;
+				direction = 1;
+			end
+			else if (forwardDistance>20 && receiveData[1:0]==2'b10) begin
+				speed = 35;
+				direction = 0;
+			end
+			else begin
+				speed = 0;
+			end
 		end
-		else if (forwardDistance>10 && receiveData[1:0]==2'b10) begin
-			speed = 35;
-			direction = 0;
-		end
-		else begin
-		   speed = 0;
-		end
+		//避障
+		else if(receiveData[5:4]==2'b01) begin 
+			// dir mode ctr
+			degree = dir;
+			direction = mode;
+			speed = speed_ctr;
+		end 
+		
 
 
 
@@ -331,11 +375,11 @@ receiveData;
 7:5 110x
 */ 
 
-always @(posedge receive or posedge resetState) begin
-	if(resetState==1) begin
+always @(posedge clk_9600) begin
+	/*if(resetState==1) begin
 		state=3;
-	end
-	else if(receiveData[7:6]==2'b001) begin
+	end*/
+	if(receiveData[7:6]==2'b00) begin
 		//command=receiveData;
 		state=0;
 	end

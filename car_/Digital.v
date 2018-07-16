@@ -1,6 +1,6 @@
 module Digital(clk_16k, A, OL, DIG);
 	input clk_16k;
-	input [13:0] A;
+	input [7:0] A;
 	output reg [6:0] OL;
 	output reg [3:0] DIG;
 	reg [1:0] col;

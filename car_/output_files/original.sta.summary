@@ -1,0 +1,405 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'divider:inst1|out_16k'
+Slack : -19.019
+TNS   : -204.803
+
+Type  : Slow Model Setup 'divider:inst1|out_10k'
+Slack : -15.781
+TNS   : -50.423
+
+Type  : Slow Model Setup 'WS2812_release:inst7|Led_art:inst|clkOut'
+Slack : -13.880
+TNS   : -415.824
+
+Type  : Slow Model Setup 'clk'
+Slack : -8.593
+TNS   : -1353.113
+
+Type  : Slow Model Setup 'divider:inst1|out_250'
+Slack : -6.589
+TNS   : -93.549
+
+Type  : Slow Model Setup 'divider:inst1|out_9600'
+Slack : -4.292
+TNS   : -75.339
+
+Type  : Slow Model Setup 'divider:inst1|out_1M'
+Slack : -3.779
+TNS   : -24.452
+
+Type  : Slow Model Setup 'divider:inst1|out_8'
+Slack : -2.549
+TNS   : -17.778
+
+Type  : Slow Model Setup 'ultraright_echo'
+Slack : -1.010
+TNS   : -3.582
+
+Type  : Slow Model Setup 'ultraback_echo'
+Slack : -0.694
+TNS   : -0.798
+
+Type  : Slow Model Setup 'main:inst15|clk_9600'
+Slack : -0.218
+TNS   : -0.600
+
+Type  : Slow Model Setup 'ultra_2'
+Slack : -0.145
+TNS   : -0.145
+
+Type  : Slow Model Hold 'clk'
+Slack : -2.624
+TNS   : -23.638
+
+Type  : Slow Model Hold 'WS2812_release:inst7|Led_art:inst|clkOut'
+Slack : -1.137
+TNS   : -1.137
+
+Type  : Slow Model Hold 'ultra_2'
+Slack : -0.020
+TNS   : -0.020
+
+Type  : Slow Model Hold 'ultraright_echo'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divider:inst1|out_16k'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divider:inst1|out_1M'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divider:inst1|out_250'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divider:inst1|out_9600'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'ultraback_echo'
+Slack : 0.693
+TNS   : 0.000
+
+Type  : Slow Model Hold 'main:inst15|clk_9600'
+Slack : 0.754
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divider:inst1|out_8'
+Slack : 1.167
+TNS   : 0.000
+
+Type  : Slow Model Hold 'divider:inst1|out_10k'
+Slack : 1.771
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'divider:inst1|out_250'
+Slack : -4.143
+TNS   : -77.003
+
+Type  : Slow Model Recovery 'WS2812_release:inst7|Led_art:inst|write0'
+Slack : -3.082
+TNS   : -3.082
+
+Type  : Slow Model Recovery 'WS2812_release:inst7|Led_art:inst|write1'
+Slack : -2.147
+TNS   : -2.147
+
+Type  : Slow Model Recovery 'WS2812_release:inst7|Led_art:inst|reset'
+Slack : -1.934
+TNS   : -1.934
+
+Type  : Slow Model Recovery 'divider:inst1|out_1'
+Slack : -0.449
+TNS   : -0.449
+
+Type  : Slow Model Removal 'divider:inst1|out_250'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Slow Model Removal 'divider:inst1|out_1'
+Slack : 1.183
+TNS   : 0.000
+
+Type  : Slow Model Removal 'WS2812_release:inst7|Led_art:inst|reset'
+Slack : 2.668
+TNS   : 0.000
+
+Type  : Slow Model Removal 'WS2812_release:inst7|Led_art:inst|write1'
+Slack : 2.881
+TNS   : 0.000
+
+Type  : Slow Model Removal 'WS2812_release:inst7|Led_art:inst|write0'
+Slack : 3.816
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.941
+TNS   : -451.593
+
+Type  : Slow Model Minimum Pulse Width 'ultra_2'
+Slack : -1.777
+TNS   : -13.649
+
+Type  : Slow Model Minimum Pulse Width 'ultraback_echo'
+Slack : -1.777
+TNS   : -13.649
+
+Type  : Slow Model Minimum Pulse Width 'ultraright_echo'
+Slack : -1.777
+TNS   : -13.649
+
+Type  : Slow Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|clkOut'
+Slack : -0.742
+TNS   : -66.780
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_16k'
+Slack : -0.742
+TNS   : -54.908
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_9600'
+Slack : -0.742
+TNS   : -54.908
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_250'
+Slack : -0.742
+TNS   : -50.456
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_10k'
+Slack : -0.742
+TNS   : -14.840
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_1M'
+Slack : -0.742
+TNS   : -14.840
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_8'
+Slack : -0.742
+TNS   : -10.388
+
+Type  : Slow Model Minimum Pulse Width 'main:inst15|clk_9600'
+Slack : -0.742
+TNS   : -4.452
+
+Type  : Slow Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|reset'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Slow Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|write0'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Slow Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|write1'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Slow Model Minimum Pulse Width 'divider:inst1|out_1'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Fast Model Setup 'divider:inst1|out_16k'
+Slack : -5.625
+TNS   : -46.757
+
+Type  : Fast Model Setup 'divider:inst1|out_10k'
+Slack : -4.368
+TNS   : -9.099
+
+Type  : Fast Model Setup 'WS2812_release:inst7|Led_art:inst|clkOut'
+Slack : -3.633
+TNS   : -100.353
+
+Type  : Fast Model Setup 'clk'
+Slack : -2.294
+TNS   : -240.505
+
+Type  : Fast Model Setup 'divider:inst1|out_250'
+Slack : -1.327
+TNS   : -15.455
+
+Type  : Fast Model Setup 'divider:inst1|out_9600'
+Slack : -0.930
+TNS   : -7.606
+
+Type  : Fast Model Setup 'divider:inst1|out_1M'
+Slack : -0.625
+TNS   : -1.650
+
+Type  : Fast Model Setup 'divider:inst1|out_8'
+Slack : -0.344
+TNS   : -2.330
+
+Type  : Fast Model Setup 'ultraright_echo'
+Slack : -0.044
+TNS   : -0.072
+
+Type  : Fast Model Setup 'ultraback_echo'
+Slack : 0.137
+TNS   : 0.000
+
+Type  : Fast Model Setup 'main:inst15|clk_9600'
+Slack : 0.292
+TNS   : 0.000
+
+Type  : Fast Model Setup 'ultra_2'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.429
+TNS   : -13.829
+
+Type  : Fast Model Hold 'WS2812_release:inst7|Led_art:inst|clkOut'
+Slack : -0.838
+TNS   : -0.838
+
+Type  : Fast Model Hold 'divider:inst1|out_16k'
+Slack : 0.139
+TNS   : 0.000
+
+Type  : Fast Model Hold 'divider:inst1|out_1M'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'divider:inst1|out_250'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'divider:inst1|out_9600'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'ultra_2'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast Model Hold 'divider:inst1|out_8'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Fast Model Hold 'ultraright_echo'
+Slack : 0.418
+TNS   : 0.000
+
+Type  : Fast Model Hold 'main:inst15|clk_9600'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Hold 'divider:inst1|out_10k'
+Slack : 0.538
+TNS   : 0.000
+
+Type  : Fast Model Hold 'ultraback_echo'
+Slack : 0.547
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'divider:inst1|out_250'
+Slack : -0.965
+TNS   : -17.182
+
+Type  : Fast Model Recovery 'WS2812_release:inst7|Led_art:inst|write0'
+Slack : -0.954
+TNS   : -0.954
+
+Type  : Fast Model Recovery 'WS2812_release:inst7|Led_art:inst|write1'
+Slack : -0.658
+TNS   : -0.658
+
+Type  : Fast Model Recovery 'WS2812_release:inst7|Led_art:inst|reset'
+Slack : -0.583
+TNS   : -0.583
+
+Type  : Fast Model Recovery 'divider:inst1|out_1'
+Slack : 0.121
+TNS   : 0.000
+
+Type  : Fast Model Removal 'divider:inst1|out_250'
+Slack : -0.168
+TNS   : -2.216
+
+Type  : Fast Model Removal 'divider:inst1|out_1'
+Slack : 0.759
+TNS   : 0.000
+
+Type  : Fast Model Removal 'WS2812_release:inst7|Led_art:inst|reset'
+Slack : 1.463
+TNS   : 0.000
+
+Type  : Fast Model Removal 'WS2812_release:inst7|Led_art:inst|write1'
+Slack : 1.538
+TNS   : 0.000
+
+Type  : Fast Model Removal 'WS2812_release:inst7|Led_art:inst|write0'
+Slack : 1.834
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -304.380
+
+Type  : Fast Model Minimum Pulse Width 'ultra_2'
+Slack : -1.222
+TNS   : -9.222
+
+Type  : Fast Model Minimum Pulse Width 'ultraback_echo'
+Slack : -1.222
+TNS   : -9.222
+
+Type  : Fast Model Minimum Pulse Width 'ultraright_echo'
+Slack : -1.222
+TNS   : -9.222
+
+Type  : Fast Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|clkOut'
+Slack : -0.500
+TNS   : -45.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_16k'
+Slack : -0.500
+TNS   : -37.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_9600'
+Slack : -0.500
+TNS   : -37.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_250'
+Slack : -0.500
+TNS   : -34.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_10k'
+Slack : -0.500
+TNS   : -10.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_1M'
+Slack : -0.500
+TNS   : -10.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_8'
+Slack : -0.500
+TNS   : -7.000
+
+Type  : Fast Model Minimum Pulse Width 'main:inst15|clk_9600'
+Slack : -0.500
+TNS   : -3.000
+
+Type  : Fast Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|reset'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|write0'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'WS2812_release:inst7|Led_art:inst|write1'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'divider:inst1|out_1'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------

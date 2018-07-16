@@ -1,0 +1,74 @@
+module avoidance  //避障模块
+(
+ input clk,
+ input[20:0] dist_m, //中距离(脉冲数量)
+ input[20:0] dist_r, //右距离(脉冲数量)
+ input[20:0] dist_l,  //左距离(脉冲数量)
+ output reg [2:0] dir,//转弯控制
+ output reg [1:0] mode, //电机状态控制
+ output reg [1:0] ctr  //车速控制 
+);
+
+
+reg [10:0] limit=13'd1500;   //30cm
+reg [10:0] ex=13'd750;           //15cm
+always @ *
+begin
+ if(dist_m > limit)        //若前方畅通，则根据左右距离实现避障
+ begin
+  if(dist_r > limit & dist_l > limit)    //若左右距离均大于限制，则直行即可
+   begin
+   dir <= 3'b000;
+   mode <= 2'b01;
+   ctr <= 2'b01;
+   end
+  else if((dist_r < limit & dist_r > ex)&(dist_l > limit))    //若右侧距离小于限制，左侧距离大于限制，则向左转弯
+  begin
+   dir <= 3'b111;
+   mode <= 2'b01;
+   ctr <= 2'b01;
+  end
+  else if((dist_l < limit & dist_l > ex)&(dist_r > limit))    //若左侧距离小于限制，右侧距离大于限制，则向右转弯
+  begin 
+    dir <= 3'b011;
+    mode <= 2'b01;
+    ctr <= 2'b01;
+  end
+  else 
+  begin                                    //若左侧右侧均不可转弯，则直向倒车，直到右侧或左侧可以转弯为止
+   dir <= 3'b000;
+   mode <= 2'b10;
+   ctr <= 2'b01;
+  end
+ end
+ else if(dist_m <limit & dist_m > ex)  //前方远处有障碍物
+ begin
+  if(dist_r > limit)                     //右侧距离大于限制，则向右转弯
+   begin
+   dir <= 3'b011;
+   mode <= 2'b01;
+   ctr <= 2'b01;
+   end
+  else if((dist_r < limit & dist_r > ex)&(dist_l > limit))  //右侧距离小于限制，左侧距离大于限制，则向左转弯
+  begin
+   dir <= 3'b111;
+   mode <= 2'b01;
+   ctr <= 2'b01;
+  end
+  else
+  begin
+   dir <= 3'b000;                      //其他情况，直向倒车
+   mode <= 2'b10;
+   ctr <= 2'b01;
+  end
+ end
+ else             //障碍物接近 无法避过，直行倒车
+ begin
+  dir <= 3'b000;
+  mode <= 2'b10;
+  ctr <= 2'b01;
+ end
+end
+
+
+endmodule
