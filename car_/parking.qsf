@@ -1,0 +1,134 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+# Date created = 09:42:14  August 30, 2017
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		parking_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C5Q208C8
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:03:00  JULY 17, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 208
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_131 -to clk
+set_location_assignment PIN_44 -to Digital[6]
+set_location_assignment PIN_40 -to Digital[5]
+set_location_assignment PIN_45 -to Digital[4]
+set_location_assignment PIN_47 -to Digital[3]
+set_location_assignment PIN_48 -to Digital[2]
+set_location_assignment PIN_41 -to Digital[1]
+set_location_assignment PIN_43 -to Digital[0]
+set_location_assignment PIN_39 -to Position[3]
+set_location_assignment PIN_37 -to Position[2]
+set_location_assignment PIN_36 -to Position[1]
+set_location_assignment PIN_35 -to Position[0]
+set_location_assignment PIN_56 -to Led[7]
+set_location_assignment PIN_57 -to Led[6]
+set_location_assignment PIN_58 -to Led[5]
+set_location_assignment PIN_59 -to Led[4]
+set_location_assignment PIN_60 -to Led[3]
+set_location_assignment PIN_61 -to Led[2]
+set_location_assignment PIN_63 -to Led[1]
+set_location_assignment PIN_64 -to Led[0]
+set_location_assignment PIN_152 -to beep
+set_location_assignment PIN_135 -to rxd
+set_location_assignment PIN_137 -to txd
+set_location_assignment PIN_3 -to Button[7]
+set_location_assignment PIN_4 -to Button[6]
+set_location_assignment PIN_5 -to Button[5]
+set_location_assignment PIN_6 -to Button[4]
+set_location_assignment PIN_8 -to Button[3]
+set_location_assignment PIN_10 -to Button[2]
+set_location_assignment PIN_11 -to Button[1]
+set_location_assignment PIN_12 -to Button[0]
+set_location_assignment PIN_205 -to steer
+set_location_assignment PIN_199 -to pwml
+set_location_assignment PIN_201 -to pwmr
+set_location_assignment PIN_150 -to Infrared[0]
+set_location_assignment PIN_163 -to Infrared[1]
+set_location_assignment PIN_169 -to ultra_trigger
+set_location_assignment PIN_165 -to ultra_2
+set_location_assignment PIN_70 -to Touch[2]
+set_location_assignment PIN_160 -to Touch[1]
+set_location_assignment PIN_69 -to Touch[3]
+set_location_assignment PIN_200 -to Touch[0]
+set_location_assignment PIN_195 -to Signs[3]
+set_location_assignment PIN_198 -to Signs[2]
+set_location_assignment PIN_106 -to ultraback_echo
+set_location_assignment PIN_107 -to ultraback_trigger
+set_location_assignment PIN_103 -to Infrared[2]
+set_location_assignment PIN_101 -to Infrared[3]
+set_location_assignment PIN_134 -to speedInfrac
+set_location_assignment PIN_191 -to dinfrared[2]
+set_location_assignment PIN_193 -to dinfrared[1]
+set_location_assignment PIN_133 -to WS2812
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_171 -to ultra_right_trigger
+set_location_assignment PIN_170 -to ultraright_echo
+set_global_assignment -name BDF_FILE WS2812_release.bdf
+set_global_assignment -name VERILOG_FILE WS2812B.v
+set_global_assignment -name VERILOG_FILE Led_art.v
+set_global_assignment -name VERILOG_FILE txd.v
+set_global_assignment -name VERILOG_FILE rxd.v
+set_global_assignment -name VERILOG_FILE PWM.v
+set_global_assignment -name VERILOG_FILE duoji.v
+set_global_assignment -name VERILOG_FILE divider.v
+set_global_assignment -name VERILOG_FILE Distance.v
+set_global_assignment -name VERILOG_FILE beep.v
+set_global_assignment -name VERILOG_FILE main.v
+set_global_assignment -name VERILOG_FILE Digital.v
+set_global_assignment -name BDF_FILE top.bdf
+set_global_assignment -name VERILOG_FILE Correspond.v
+set_global_assignment -name VERILOG_FILE testSpeed.v
+set_global_assignment -name VERILOG_FILE lcd.v
+set_global_assignment -name VERILOG_FILE lcd2.v
+set_global_assignment -name VERILOG_FILE blueTooth.v
+set_global_assignment -name VERILOG_FILE avoidance.v
+set_location_assignment PIN_149 -to ultraleft_echo
+set_location_assignment PIN_147 -to ultra_left_trigger
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

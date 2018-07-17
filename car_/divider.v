@@ -1,4 +1,4 @@
-module divider(clk,out_1,out_8,out_400,out_1k,out_9600,out_16k,out_10k,out_1M,out_250);
+module divider(clk,out_1,out_8,out_400,out_1k,out_9600,out_16k,out_10k,out_100k,out_1M,out_250);
 input clk;
 output reg out_1;
 output reg out_9600;
@@ -7,6 +7,7 @@ output reg out_400;
 output reg out_16k;
 output reg out_1k;
 output reg out_10k;
+output reg out_100k;
 output reg out_1M;
 output reg out_250;
 
@@ -18,6 +19,7 @@ reg[16:0] cnt400;//62500
 
 reg[14:0] cnt1k;//24999
 reg[11:0] cnt10k;//2499
+reg[13:0] cnt100k;//249
 reg[4:0] cnt1M;//24
 reg[16:0] cnt250;//99999
 
@@ -84,6 +86,14 @@ begin
 	begin
 		cnt10k<=0;
 		out_10k=~out_10k;
+	end
+	//100k
+	if(cnt100k<249)
+		cnt100k<=cnt100k+1;
+	else
+	begin
+		cnt100k<=0;
+		out_100k=~out_100k;
 	end
 	
 	//1M

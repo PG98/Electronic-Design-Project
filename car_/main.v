@@ -7,6 +7,8 @@ module main
 	input [7:0] receiveData,
 	input [7:0] button,
 	input [7:0] forwardDistance,//超声波前方
+	input [7:0] leftDistance, //
+	input [7:0] rightDistance, //
 	input [3:0] touch,//触碰
 	input [3:0] infrared,//红外
 	input [3:0] signs,//摄像头
@@ -17,7 +19,8 @@ module main
 	output reg [8:0] degree,
 	output reg direction,
 	output reg beepEnable,
-	output reg [13:0] display,
+//	output reg [13:0] display,
+	output reg [7:0] display,	
 	output reg [7:0] led,
 	input [7:0] backDistance,//后方超声波
 	input [13:0] inspeed,//测量得到的速度
@@ -114,7 +117,7 @@ always @ (posedge clk_50M) begin
 	//display=inspeed;
 	//speed=button;
 	led[6:5]=state;
-	display = forwardDistance;
+	//display = forwardDistance;
 	if(state==0) begin// 完全控制(红色)
 	/*
 		lcd_state=3'b100;
@@ -140,9 +143,13 @@ always @ (posedge clk_50M) begin
 	*/
 		//遥控
 		if(receiveData[5:4]==2'b00) begin
-			if (receiveData[3:2]==2'b01) degree=30;
-			else if(receiveData[3:2]==2'b10)degree=90;
+			if (receiveData[3:2]==2'b01) degree=30; // right turn
+			else if(receiveData[3:2]==2'b10)degree=90;//
 			else degree=60;
+			//correction
+			//if (receiveData[3:2]==2'b01) degree=57; // right turn
+			//else if(receiveData[3:2]==2'b10)degree=58;//
+			//else degree=59;
 
 			if (forwardDistance>20 && receiveData[1:0]==2'b01) begin
 				speed = 35;
@@ -162,21 +169,55 @@ always @ (posedge clk_50M) begin
 			degree = dir;
 			direction = mode;
 			speed = speed_ctr;
+			if(receiveData[3:2]==2'b00) display = leftDistance;
+			else display = rightDistance;
 		end 
-		
-
-
 
 	end
+	
+	
+	
+	
 	else if(state==1) begin
 		initialSpeed=receiveData[5:0];
 		isSet=1;
 		resetState=1;
 		//beepEnable=1;
 	end
+	
+	
 	else if(state==2) begin
-		mystate=receiveData[1:0];
-		resetState=1;
+		mystate=receiveData[5:4];
+		//resetState=1;
+		//mycode begins
+		if(mystate==2'b00) begin//走黑线(蓝色)
+			lcd_state=3'b010;
+			light=80;//blue
+			led[1:0]=downinfrared[2:1];
+			//speed=15;
+			direction=1;
+			if(!downinfrared[2] && !downinfrared[1]) begin//两个都在黑线外，直走
+				degree=60;
+				speed = 17;
+				//led[7:2]=6'b000000;
+			end
+			else if(downinfrared[2] && !downinfrared[1]) begin//
+				degree=30;
+				speed = 14;
+				//led[7:2]=6'b000000;
+			end
+			else if(!downinfrared[2] && downinfrared[1]) begin
+				degree=90;
+				speed = 14;
+				//led[7:2]=6'b000000;
+			end
+			else begin//两个都没看到
+				speed=0;
+				degree=60;
+				//led[7:2]=6'b111111;
+			end
+		end
+		//mycode ends
 	end
 
 	else begin//自己玩

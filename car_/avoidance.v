@@ -9,84 +9,65 @@ module avoidance  //避障模块
  output reg [7:0] speed  //车速控制 
 );
 
-reg [7:0] limit=20;   //30cm
-reg [7:0] ex=10;           //15cm
-always @ *
+reg [7:0] limit=30;   //cm
+reg [7:0] ex=15;    
+always@(posedge clk)
 begin
  if(dist_m > limit)        //若前方畅通，则根据左右距离实现避障
- begin
-  if(dist_r > limit & dist_l > limit)    //若左右距离均大于限制，则直行即可
-   begin
-   degree <= 60;
-   mode <= 1;
-   speed <= 20;
-   end
-  else if((dist_r < limit & dist_r > ex)&(dist_l > limit))    //若右侧距离小于限制，左侧距离大于限制，则向左转弯
-  begin
-   degree <= 90;
-   mode <= 1;
-   speed <= 20;
-  end
-  else if((dist_l < limit & dist_l > ex)&(dist_r > limit))    //若左侧距离小于限制，右侧距离大于限制，则向右转弯
-  begin 
-    degree <= 30;
-    mode <= 1;
-    speed <= 20;
-  end
-  else 
-  begin                                    //若左侧右侧均不可转弯，则直向倒车，直到右侧或左侧可以转弯为止
-   degree <= 60;
-   mode <= 0;
-   speed <= 20;
-  end
+	begin
+	speed <= 30;
+	if(dist_r > limit && dist_l > limit)    //若左右距离均大于限制，则直行即可
+		begin
+		degree <= 60;
+		mode <= 1;
+		//speed <= 20;
+		end
+	  else if((dist_r < limit && dist_r > ex)&&(dist_l > limit))    //若右侧距离小于限制，左侧距离大于限制，则向左转弯
+	  begin
+		degree <= 90;
+		mode <= 1;
+		//speed <= 20;
+	  end
+	  else if((dist_l < limit && dist_l > ex)&&(dist_r > limit))    //若左侧距离小于限制，右侧距离大于限制，则向右转弯
+	  begin 
+		 degree <= 30;
+		 mode <= 1;
+		 //speed <= 20;
+	  end
+	  else 
+	  begin                                    //若左侧右侧均不可转弯，则直向倒车，直到右侧或左侧可以转弯为止
+		degree <= 60;
+		mode <= 0;
+		//speed <= 20;
+	  end
  end
- else if(dist_m <limit & dist_m > ex)  //前方远处有障碍物
+ else if(dist_m <limit && dist_m > ex)  //前方远处有障碍物
  begin
   if(dist_r > limit)                     //右侧距离大于限制，则向右转弯
    begin
    degree <= 30;
    mode <= 1;
-   speed <= 20;
+   //speed <= 20;
    end
-  else if((dist_r < limit & dist_r > ex)&(dist_l > limit))  //右侧距离小于限制，左侧距离大于限制，则向左转弯
+  else if((dist_r < limit && dist_r > ex)&&(dist_l > limit))  //右侧距离小于限制，左侧距离大于限制，则向左转弯
   begin
    degree <= 90;
    mode <= 1;
-   speed <= 20;
+   //speed <= 20;
   end
   else
   begin
    degree <= 60;                      //其他情况，直向倒车
    mode <= 0;
-   speed <= 20;
+   //speed <= 20;
   end
  end
  else             //障碍物接近 无法避过，直行倒车
  begin
   degree <= 60;
   mode <= 0;
-  speed <= 20;
+  //speed <= 20;
  end
- /*
- //test
- if(dist_m > 10)        //若前方畅通，则根据左右距离实现避障
-	begin
-	if(dist_r < 50 & dist_r > 10)  //右侧距离小于限制，左侧距离大于限制，则向左转弯
-	begin
-		degree <= 90;
-		mode <= 0;
-		speed <= 20;
-	end
-	else degree <= 60;
-	end
-	
-else begin
-	degree <= 30;
-	mode <=1;
-	speed <= 20;
- end
- */
 end
-
 
 endmodule
