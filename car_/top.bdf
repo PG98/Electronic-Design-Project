@@ -68,7 +68,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -776 368 -720 408))
+	(annotation_block (location)(rect -840 368 -776 432))
 )
 (pin
 	(input)
@@ -340,11 +340,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1352 496 1400 512))
+	(annotation_block (location)(rect 1352 496 1400 648))
 )
 (pin
 	(output)
-	(rect 1176 520 1352 536)
+	(rect 1176 640 1352 656)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "steer" (rect 90 0 114 12)(font "Arial" ))
 	(pt 0 8)
@@ -357,11 +357,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1352 536 1408 552))
+	(annotation_block (location)(rect 1352 712 1408 728))
 )
 (pin
 	(output)
-	(rect 1168 576 1344 592)
+	(rect 1168 696 1344 712)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "ultra_trigger" (rect 90 0 147 12)(font "Arial" ))
 	(pt 0 8)
@@ -374,11 +374,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1344 592 1400 608))
+	(annotation_block (location)(rect 1344 712 1400 728))
 )
 (pin
 	(output)
-	(rect 1168 696 1345 712)
+	(rect 1168 816 1345 832)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "ultraback_trigger" (rect 90 0 171 12)(font "Arial" ))
 	(pt 0 8)
@@ -391,11 +391,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1345 712 1401 728))
+	(annotation_block (location)(rect 1345 832 1401 848))
 )
 (pin
 	(output)
-	(rect 1160 616 1340 632)
+	(rect 1160 736 1340 752)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "ultra_right_trigger" (rect 90 0 174 12)(font "Arial" ))
 	(pt 0 8)
@@ -408,11 +408,11 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1336 632 1392 648))
+	(annotation_block (location)(rect 1336 752 1392 768))
 )
 (pin
 	(output)
-	(rect 1152 656 1328 672)
+	(rect 1152 776 1328 792)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "ultra_left_trigger" (rect 90 0 170 12)(font "Arial" ))
 	(pt 0 8)
@@ -425,7 +425,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1336 664 1392 680))
+	(annotation_block (location)(rect 1336 784 1392 800))
 )
 (symbol
 	(rect 760 216 928 328)
@@ -500,7 +500,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 768 504 912 584)
+	(rect 768 544 912 624)
 	(text "beep" (rect 5 0 28 12)(font "Arial" ))
 	(text "inst6" (rect 8 64 31 76)(font "Arial" ))
 	(port
@@ -1262,16 +1262,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "m_steer" (rect 1146 512 1186 524)(font "Arial" ))
-	(pt 1176 528)
-	(pt 1136 528)
-)
-(connector
-	(text "clk_8" (rect 1146 568 1171 580)(font "Arial" ))
-	(pt 1168 584)
-	(pt 1136 584)
-)
-(connector
 	(text "clk_50M" (rect -544 296 -504 308)(font "Arial" ))
 	(pt -544 312)
 	(pt -528 312)
@@ -1316,11 +1306,6 @@ applicable agreement for further details.
 	(pt 728 120)
 )
 (connector
-	(text "clk_50M" (rect 738 520 778 532)(font "Arial" ))
-	(pt 728 536)
-	(pt 768 536)
-)
-(connector
 	(text "data[7..0]" (rect 730 248 777 260)(font "Arial" ))
 	(pt 760 264)
 	(pt 720 264)
@@ -1350,11 +1335,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "m_enable" (rect 738 536 785 548)(font "Arial" ))
-	(pt 768 552)
-	(pt 728 552)
-)
-(connector
 	(text "m_ready" (rect 938 248 981 260)(font "Arial" ))
 	(pt 928 264)
 	(pt 984 264)
@@ -1373,11 +1353,6 @@ applicable agreement for further details.
 	(text "pwmr" (rect 946 392 971 404)(font "Arial" ))
 	(pt 936 408)
 	(pt 1024 408)
-)
-(connector
-	(text "m_beep" (rect 922 520 960 532)(font "Arial" ))
-	(pt 912 536)
-	(pt 1024 536)
 )
 (connector
 	(text "m_steer" (rect 946 632 986 644)(font "Arial" ))
@@ -1536,21 +1511,6 @@ applicable agreement for further details.
 	(pt -184 648)
 	(pt -160 648)
 	(bus)
-)
-(connector
-	(text "clk_8" (rect 1138 608 1163 620)(font "Arial" ))
-	(pt 1160 624)
-	(pt 1128 624)
-)
-(connector
-	(text "clk_8" (rect 1146 688 1171 700)(font "Arial" ))
-	(pt 1168 704)
-	(pt 1136 704)
-)
-(connector
-	(text "clk_8" (rect 1130 648 1155 660)(font "Arial" ))
-	(pt 1152 664)
-	(pt 1120 664)
 )
 (connector
 	(text "dir[7..0]" (rect 290 720 327 732)(font "Arial" ))
@@ -1816,4 +1776,44 @@ applicable agreement for further details.
 	(pt 104 504)
 	(pt 56 504)
 	(bus)
+)
+(connector
+	(text "clk_8" (rect 1146 688 1171 700)(font "Arial" ))
+	(pt 1168 704)
+	(pt 1136 704)
+)
+(connector
+	(text "clk_8" (rect 1138 728 1163 740)(font "Arial" ))
+	(pt 1160 744)
+	(pt 1128 744)
+)
+(connector
+	(text "clk_8" (rect 1146 808 1171 820)(font "Arial" ))
+	(pt 1168 824)
+	(pt 1136 824)
+)
+(connector
+	(text "clk_8" (rect 1130 768 1155 780)(font "Arial" ))
+	(pt 1152 784)
+	(pt 1120 784)
+)
+(connector
+	(text "m_steer" (rect 1146 632 1186 644)(font "Arial" ))
+	(pt 1136 648)
+	(pt 1176 648)
+)
+(connector
+	(text "clk_50M" (rect 738 560 778 572)(font "Arial" ))
+	(pt 728 576)
+	(pt 768 576)
+)
+(connector
+	(text "m_enable" (rect 738 576 785 588)(font "Arial" ))
+	(pt 768 592)
+	(pt 728 592)
+)
+(connector
+	(text "m_beep" (rect 922 560 960 572)(font "Arial" ))
+	(pt 912 576)
+	(pt 1024 576)
 )

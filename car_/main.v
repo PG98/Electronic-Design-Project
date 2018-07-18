@@ -49,6 +49,7 @@ reg [1:0] state;//控制模式
 reg [1:0] mystate;//自己的状态
 reg resetState;
 reg isSet;
+reg flag;
 
 reg clk_9600;
 reg clk_10k;
@@ -117,7 +118,7 @@ always @ (posedge clk_50M) begin
 	//display=inspeed;
 	//speed=button;
 	led[6:5]=state;
-	//display = forwardDistance;
+	display = backDistance;
 	if(state==0) begin// 完全控制(红色)
 	/*
 		lcd_state=3'b100;
@@ -161,6 +162,7 @@ always @ (posedge clk_50M) begin
 			end
 			else begin
 				speed = 0;
+				beepEnable = 0;
 			end
 		end
 		//避障
@@ -169,8 +171,8 @@ always @ (posedge clk_50M) begin
 			degree = dir;
 			direction = mode;
 			speed = speed_ctr;
-			if(receiveData[3:2]==2'b00) display = leftDistance;
-			else display = rightDistance;
+			//if(receiveData[3:2]==2'b00) display = leftDistance;
+			//else display = rightDistance;
 		end 
 
 	end
@@ -217,6 +219,77 @@ always @ (posedge clk_50M) begin
 				//led[7:2]=6'b111111;
 			end
 		end
+		
+		else if(mystate==2'b01) begin
+		//自动泊车(紫色)
+				//display = backDistance;
+				light=5*256*256+167*256+82;
+				if(flag != receiveData[0]) backStatus = 0;
+				flag = receiveData[0];
+				
+				//if(receiveData[1:0]==2'b01 && backStatus==3) backStatus=0;
+				led[1:0]=backStatus;
+				
+				if(backStatus==0 && backDistance<35)
+					backStatus=1;
+				else if(backStatus==1 && Delaying2!=last2 && last2==1) begin
+					backStatus=2;
+					target2=0;
+				end
+				else if(backStatus==2 && backDistance<17 && direction==0) begin
+					backStatus=3;
+					backdone=1;
+					beepEnable=0;
+					direction=1;
+					//speed=5;
+					speed = 10;
+					//mystate=3;
+				end
+				else begin
+					if(backStatus==0) begin
+						direction=0;
+						degree=90;
+						speed=initialSpeed+18;
+						beepEnable=1;
+					end
+					else if(backStatus==1) begin
+						degree=30;
+						speed=initialSpeed+10;
+						direction=1;
+						target2=11;
+						beepEnable=0;
+					end
+					else if(backStatus==2) begin
+						beepEnable=1;
+						direction=0;
+						if(backDistance<60) begin
+							if(!infrared[3]) begin
+								degree=75;
+								speed=initialSpeed+10;
+							end
+							else if(!infrared[2])begin
+								degree=45;
+								speed=initialSpeed+10;
+							end
+							else begin
+								degree=60;
+								speed=initialSpeed+11;
+							end
+						end
+						else begin//直行倒车
+							speed=initialSpeed+6;
+							degree=60;
+						end
+					end
+					else begin//backStatus==3
+						speed=0;
+						degree=60;
+						led[7]=1;
+					end
+				end
+				last=Delaying;
+				last2=Delaying2;
+			end
 		//mycode ends
 	end
 
