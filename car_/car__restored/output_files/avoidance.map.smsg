@@ -1,9 +1,0 @@
-Warning (10268): Verilog HDL information at WS2812B.v(48): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at Led_art.v(41): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at txd.v(18): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at rxd.v(10): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at divider.v(24): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at beep.v(14): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at beep.v(44): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at main.v(94): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at lcd.v(52): always construct contains both blocking and non-blocking assignments
