@@ -86,11 +86,11 @@ TDI                          : 19        : input  :                   :         
 DATA0                        : 20        : input  :                   :         : 1         :                
 DCLK                         : 21        :        :                   :         : 1         :                
 nCE                          : 22        :        :                   :         : 1         :                
-speedInfrac                  : 23        : input  : 3.3-V LVTTL       :         : 1         : N              
-Signs[1]                     : 24        : input  : 3.3-V LVTTL       :         : 1         : N              
+Signs[1]                     : 23        : input  : 3.3-V LVTTL       :         : 1         : N              
+Signs[0]                     : 24        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : 25        : gnd    :                   :         :           :                
 nCONFIG                      : 26        :        :                   :         : 1         :                
-Signs[0]                     : 27        : input  : 3.3-V LVTTL       :         : 1         : N              
+GND+                         : 27        :        :                   :         : 1         :                
 GND+                         : 28        :        :                   :         : 1         :                
 VCCIO1                       : 29        : power  :                   : 3.3V    : 1         :                
 GND*                         : 30        :        :                   :         : 1         :                
@@ -138,14 +138,14 @@ VCCIO4                       : 71        : power  :                   : 3.3V    
 GND*                         : 72        :        :                   :         : 4         :                
 GND                          : 73        : gnd    :                   :         :           :                
 GND*                         : 74        :        :                   :         : 4         :                
-dinfrared[0]                 : 75        : input  : 3.3-V LVTTL       :         : 4         : N              
+dinfrared[3]                 : 75        : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : 76        :        :                   :         : 4         :                
 GND*                         : 77        :        :                   :         : 4         :                
 GND                          : 78        : gnd    :                   :         :           :                
 VCCINT                       : 79        : power  :                   : 1.2V    :           :                
 GND*                         : 80        :        :                   :         : 4         :                
 GND*                         : 81        :        :                   :         : 4         :                
-GND*                         : 82        :        :                   :         : 4         :                
+dinfrared[0]                 : 82        : input  : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : 83        : power  :                   : 3.3V    : 4         :                
 GND*                         : 84        :        :                   :         : 4         :                
 GND                          : 85        : gnd    :                   :         :           :                
@@ -162,7 +162,7 @@ GND*                         : 95        :        :                   :         
 GND*                         : 96        :        :                   :         : 4         :                
 GND*                         : 97        :        :                   :         : 4         :                
 VCCIO4                       : 98        : power  :                   : 3.3V    : 4         :                
-dinfrared[3]                 : 99        : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : 99        :        :                   :         : 4         :                
 GND                          : 100       : gnd    :                   :         :           :                
 GND*                         : 101       :        :                   :         : 4         :                
 GND*                         : 102       :        :                   :         : 4         :                
@@ -206,15 +206,15 @@ Infrared[2]                  : 139       : input  : 3.3-V LVTTL       :         
 GND                          : 140       : gnd    :                   :         :           :                
 Infrared[3]                  : 141       : input  : 3.3-V LVTTL       :         : 3         : Y              
 GND*                         : 142       :        :                   :         : 3         :                
-GND*                         : 143       :        :                   :         : 3         :                
-GND*                         : 144       :        :                   :         : 3         :                
+ultra_2                      : 143       : input  : 3.3-V LVTTL       :         : 3         : Y              
+ultra_trigger                : 144       : output : 3.3-V LVTTL       :         : 3         : Y              
 ultraback_echo               : 145       : input  : 3.3-V LVTTL       :         : 3         : Y              
 ultraback_trigger            : 146       : output : 3.3-V LVTTL       :         : 3         : Y              
 ultra_left_trigger           : 147       : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 148       : power  :                   : 3.3V    : 3         :                
 ultraleft_echo               : 149       : input  : 3.3-V LVTTL       :         : 3         : Y              
 Infrared[0]                  : 150       : input  : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : 151       :        :                   :         : 3         :                
+speedInfrac                  : 151       : input  : 3.3-V LVTTL       :         : 3         : Y              
 beep                         : 152       : output : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : 153       : gnd    :                   :         :           :                
 GND_PLL2                     : 154       : gnd    :                   :         :           :                
@@ -228,11 +228,11 @@ GND*                         : 161       :        :                   :         
 GND*                         : 162       :        :                   :         : 2         :                
 Infrared[1]                  : 163       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 164       :        :                   :         : 2         :                
-ultra_2                      : 165       : input  : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 165       :        :                   :         : 2         :                
 VCCIO2                       : 166       : power  :                   : 3.3V    : 2         :                
 GND                          : 167       : gnd    :                   :         :           :                
 GND*                         : 168       :        :                   :         : 2         :                
-ultra_trigger                : 169       : output : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 169       :        :                   :         : 2         :                
 ultraright_echo              : 170       : input  : 3.3-V LVTTL       :         : 2         : Y              
 ultra_right_trigger          : 171       : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 172       : power  :                   : 3.3V    : 2         :                
@@ -242,9 +242,9 @@ GND*                         : 175       :        :                   :         
 GND*                         : 176       :        :                   :         : 2         :                
 GND                          : 177       : gnd    :                   :         :           :                
 VCCINT                       : 178       : power  :                   : 1.2V    :           :                
-GND*                         : 179       :        :                   :         : 2         :                
-GND*                         : 180       :        :                   :         : 2         :                
-GND*                         : 181       :        :                   :         : 2         :                
+dotMatrix[0]                 : 179       : output : 3.3-V LVTTL       :         : 2         : Y              
+dotMatrix[1]                 : 180       : output : 3.3-V LVTTL       :         : 2         : Y              
+dotMatrix[2]                 : 181       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 182       :        :                   :         : 2         :                
 VCCIO2                       : 183       : power  :                   : 3.3V    : 2         :                
 GND                          : 184       : gnd    :                   :         :           :                

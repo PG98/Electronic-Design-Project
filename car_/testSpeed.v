@@ -3,6 +3,7 @@ module testSpeed
 	input clk_50Mhz,
 	input speedInfrac,
 	output reg [13:0] outSpeed
+	//output reg [7:0] outSpeed
 );
 
 reg [26:0] cnt;
@@ -21,6 +22,7 @@ always@(posedge clk_50Mhz) begin
 	else if(circleCnt>30) begin
 		circleCnt=0;
 		outSpeed=172787/cnt;//pi*d*10=172787,d=5.5cm,cm/s
+		//outSpeed=518361/cnt;
 		cnt=0;
 	end
 	else if(cnt < 50000) begin//50s

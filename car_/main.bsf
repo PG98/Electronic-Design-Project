@@ -180,8 +180,8 @@ applicable agreement for further details.
 	(port
 		(pt 240 96)
 		(output)
-		(text "display[7..0]" (rect 0 0 47 12)(font "Arial" ))
-		(text "display[7..0]" (rect 172 91 219 103)(font "Arial" ))
+		(text "display[13..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "display[13..0]" (rect 169 91 219 103)(font "Arial" ))
 		(line (pt 240 96)(pt 224 96)(line_width 3))
 	)
 	(port
@@ -204,6 +204,13 @@ applicable agreement for further details.
 		(text "lcd_state[2..0]" (rect 0 0 55 12)(font "Arial" ))
 		(text "lcd_state[2..0]" (rect 164 139 219 151)(font "Arial" ))
 		(line (pt 240 144)(pt 224 144)(line_width 3))
+	)
+	(port
+		(pt 240 160)
+		(output)
+		(text "dotMatrix[2..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "dotMatrix[2..0]" (rect 163 155 219 167)(font "Arial" ))
+		(line (pt 240 160)(pt 224 160)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 224 320)(line_width 1))

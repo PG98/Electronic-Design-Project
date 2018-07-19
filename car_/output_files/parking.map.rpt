@@ -1,5 +1,5 @@
 Analysis & Synthesis report for parking
-Wed Jul 18 11:51:44 2018
+Thu Jul 19 10:41:39 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -14,8 +14,8 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |top|blueTooth:inst9|state
-  9. State Machine - |top|main:inst13|state
- 10. State Machine - |top|main:inst13|backStatus
+  9. State Machine - |top|main:inst7|state
+ 10. State Machine - |top|main:inst7|backStatus
  11. Registers Removed During Synthesis
  12. Removed Registers Triggering Further Register Optimizations
  13. General Register Statistics
@@ -55,16 +55,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 18 11:51:44 2018       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 19 10:41:39 2018       ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name                      ; parking                                     ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone II                                  ;
-; Total logic elements               ; 1,109                                       ;
-;     Total combinational functions  ; 1,075                                       ;
-;     Dedicated logic registers      ; 393                                         ;
-; Total registers                    ; 393                                         ;
-; Total pins                         ; 59                                          ;
+; Total logic elements               ; 1,146                                       ;
+;     Total combinational functions  ; 1,112                                       ;
+;     Dedicated logic registers      ; 388                                         ;
+; Total registers                    ; 388                                         ;
+; Total pins                         ; 62                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -192,6 +192,7 @@ applicable agreement for further details.
 ; testSpeed.v                      ; yes             ; User Verilog HDL File              ; C:/MyDownloads/analogEXP/car_/testSpeed.v                          ;         ;
 ; blueTooth.v                      ; yes             ; User Verilog HDL File              ; C:/MyDownloads/analogEXP/car_/blueTooth.v                          ;         ;
 ; avoidance.v                      ; yes             ; User Verilog HDL File              ; C:/MyDownloads/analogEXP/car_/avoidance.v                          ;         ;
+; testSpeed2.v                     ; yes             ; User Verilog HDL File              ; C:/MyDownloads/analogEXP/car_/testSpeed2.v                         ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                       ; c:/altera/13.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
@@ -216,28 +217,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,109 ;
+; Estimated Total logic elements              ; 1,146 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1075  ;
+; Total combinational functions               ; 1112  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 404   ;
-;     -- 3 input functions                    ; 170   ;
-;     -- <=2 input functions                  ; 501   ;
+;     -- 4 input functions                    ; 431   ;
+;     -- 3 input functions                    ; 177   ;
+;     -- <=2 input functions                  ; 504   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 726   ;
+;     -- normal mode                          ; 763   ;
 ;     -- arithmetic mode                      ; 349   ;
 ;                                             ;       ;
-; Total registers                             ; 393   ;
-;     -- Dedicated logic registers            ; 393   ;
+; Total registers                             ; 388   ;
+;     -- Dedicated logic registers            ; 388   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 59    ;
+; I/O pins                                    ; 62    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 245   ;
-; Total fan-out                               ; 4210  ;
-; Average fan-out                             ; 2.76  ;
+; Maximum fan-out                             ; 240   ;
+; Total fan-out                               ; 4321  ;
+; Average fan-out                             ; 2.77  ;
 +---------------------------------------------+-------+
 
 
@@ -246,7 +247,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
-; |top                                      ; 1075 (0)          ; 393 (0)      ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |top                                                                                                              ;              ;
+; |top                                      ; 1112 (0)          ; 388 (0)      ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |top                                                                                                              ;              ;
 ;    |Correspond:inst11|                    ; 37 (37)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Correspond:inst11                                                                                            ;              ;
 ;    |Digital:inst|                         ; 182 (27)          ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Digital:inst                                                                                                 ;              ;
 ;       |lpm_divide:Div1|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Digital:inst|lpm_divide:Div1                                                                                 ;              ;
@@ -270,16 +271,16 @@ applicable agreement for further details.
 ;    |Distance:inst4|                       ; 11 (11)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Distance:inst4                                                                                               ;              ;
 ;    |Distance:inst5|                       ; 11 (11)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|Distance:inst5                                                                                               ;              ;
 ;    |PWM:inst19|                           ; 28 (28)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|PWM:inst19                                                                                                   ;              ;
-;    |avoidance:inst2|                      ; 20 (20)           ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|avoidance:inst2                                                                                              ;              ;
+;    |avoidance:inst2|                      ; 21 (21)           ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|avoidance:inst2                                                                                              ;              ;
 ;    |beep:inst6|                           ; 71 (71)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|beep:inst6                                                                                                   ;              ;
-;    |blueTooth:inst9|                      ; 24 (24)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|blueTooth:inst9                                                                                              ;              ;
+;    |blueTooth:inst9|                      ; 25 (25)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|blueTooth:inst9                                                                                              ;              ;
 ;    |divider:inst17|                       ; 136 (136)         ; 103 (103)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|divider:inst17                                                                                               ;              ;
 ;    |duoji:inst18|                         ; 77 (33)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|duoji:inst18                                                                                                 ;              ;
 ;       |lpm_divide:Div0|                   ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|duoji:inst18|lpm_divide:Div0                                                                                 ;              ;
 ;          |lpm_divide_2dm:auto_generated|  ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|duoji:inst18|lpm_divide:Div0|lpm_divide_2dm:auto_generated                                                   ;              ;
 ;             |sign_div_unsign_ckh:divider| ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|duoji:inst18|lpm_divide:Div0|lpm_divide_2dm:auto_generated|sign_div_unsign_ckh:divider                       ;              ;
 ;                |alt_u_div_qve:divider|    ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|duoji:inst18|lpm_divide:Div0|lpm_divide_2dm:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_qve:divider ;              ;
-;    |main:inst13|                          ; 443 (443)         ; 108 (108)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|main:inst13                                                                                                  ;              ;
+;    |main:inst7|                           ; 478 (478)         ; 103 (103)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|main:inst7                                                                                                   ;              ;
 ;    |txd:inst3|                            ; 13 (13)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|txd:inst3                                                                                                    ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -299,7 +300,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +------------------------------------------------------+
-; State Machine - |top|main:inst13|state               ;
+; State Machine - |top|main:inst7|state                ;
 +----------+----------+----------+----------+----------+
 ; Name     ; state.11 ; state.10 ; state.01 ; state.00 ;
 +----------+----------+----------+----------+----------+
@@ -312,7 +313,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------+
-; State Machine - |top|main:inst13|backStatus                                   ;
+; State Machine - |top|main:inst7|backStatus                                    ;
 +---------------+---------------+---------------+---------------+---------------+
 ; Name          ; backStatus.11 ; backStatus.10 ; backStatus.01 ; backStatus.00 ;
 +---------------+---------------+---------------+---------------+---------------+
@@ -334,20 +335,20 @@ Encoding Type:  One-Hot
 ; avoidance:inst2|speed[0]               ; Stuck at GND due to stuck port data_in ;
 ; avoidance:inst2|speed[1..4]            ; Stuck at VCC due to stuck port data_in ;
 ; avoidance:inst2|speed[5..7]            ; Stuck at GND due to stuck port data_in ;
-; main:inst13|degree[8]                  ; Merged with main:inst13|degree[7]      ;
+; main:inst7|degree[8]                   ; Merged with main:inst7|degree[7]       ;
 ; txd:inst3|avail                        ; Merged with txd:inst3|flag             ;
-; main:inst13|target2[3]                 ; Merged with main:inst13|target2[1]     ;
-; main:inst13|target2[4,5]               ; Merged with main:inst13|target2[2]     ;
-; main:inst13|target2[2]                 ; Stuck at GND due to stuck port data_in ;
-; main:inst13|state.11                   ; Lost fanout                            ;
-; main:inst13|state~3                    ; Lost fanout                            ;
-; main:inst13|state~4                    ; Lost fanout                            ;
-; main:inst13|backStatus~6               ; Lost fanout                            ;
-; main:inst13|backStatus~7               ; Lost fanout                            ;
-; main:inst13|backStatus.11              ; Lost fanout                            ;
-; avoidance:inst2|degree[1]              ; Merged with avoidance:inst2|degree[5]  ;
+; main:inst7|target2[3]                  ; Merged with main:inst7|target2[1]      ;
+; main:inst7|target2[4,5]                ; Merged with main:inst7|target2[2]      ;
+; main:inst7|target2[2]                  ; Stuck at GND due to stuck port data_in ;
+; main:inst7|state.11                    ; Lost fanout                            ;
+; main:inst7|state~3                     ; Lost fanout                            ;
+; main:inst7|state~4                     ; Lost fanout                            ;
+; main:inst7|backStatus~6                ; Lost fanout                            ;
+; main:inst7|backStatus~7                ; Lost fanout                            ;
+; main:inst7|backStatus.11               ; Lost fanout                            ;
 ; avoidance:inst2|degree[6]              ; Merged with avoidance:inst2|degree[2]  ;
-; main:inst13|degree[7]                  ; Stuck at GND due to stuck port data_in ;
+; avoidance:inst2|degree[1]              ; Merged with avoidance:inst2|degree[5]  ;
+; main:inst7|degree[7]                   ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 27 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
@@ -357,9 +358,9 @@ Encoding Type:  One-Hot
 +---------------------------+---------------------------+----------------------------------------+
 ; Register name             ; Reason for Removal        ; Registers Removed due to This Register ;
 +---------------------------+---------------------------+----------------------------------------+
-; avoidance:inst2|degree[7] ; Stuck at GND              ; main:inst13|degree[7]                  ;
+; avoidance:inst2|degree[7] ; Stuck at GND              ; main:inst7|degree[7]                   ;
 ;                           ; due to stuck port data_in ;                                        ;
-; main:inst13|backStatus~6  ; Lost Fanouts              ; main:inst13|backStatus.11              ;
+; main:inst7|backStatus~6   ; Lost Fanouts              ; main:inst7|backStatus.11               ;
 +---------------------------+---------------------------+----------------------------------------+
 
 
@@ -368,9 +369,9 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 393   ;
-; Number of registers using Synchronous Clear  ; 170   ;
-; Number of registers using Synchronous Load   ; 19    ;
+; Total registers                              ; 388   ;
+; Number of registers using Synchronous Clear  ; 169   ;
+; Number of registers using Synchronous Load   ; 11    ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 131   ;
@@ -383,22 +384,22 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; main:inst13|speed[4]                    ; 2       ;
-; main:inst13|speed[3]                    ; 2       ;
-; main:inst13|speed[2]                    ; 6       ;
-; main:inst13|direction                   ; 10      ;
-; main:inst13|degree[5]                   ; 8       ;
-; main:inst13|degree[4]                   ; 9       ;
-; main:inst13|degree[3]                   ; 9       ;
-; main:inst13|degree[2]                   ; 9       ;
-; main:inst13|lastsign2                   ; 5       ;
-; main:inst13|lastsign3                   ; 3       ;
-; main:inst13|mystate[0]                  ; 33      ;
-; main:inst13|mystate[1]                  ; 24      ;
-; main:inst13|initialSpeed[3]             ; 5       ;
-; main:inst13|initialSpeed[2]             ; 5       ;
-; main:inst13|initialSpeed[1]             ; 5       ;
-; main:inst13|initialSpeed[0]             ; 3       ;
+; main:inst7|speed[4]                     ; 3       ;
+; main:inst7|speed[3]                     ; 3       ;
+; main:inst7|speed[2]                     ; 8       ;
+; main:inst7|direction                    ; 11      ;
+; main:inst7|degree[5]                    ; 9       ;
+; main:inst7|degree[4]                    ; 10      ;
+; main:inst7|degree[3]                    ; 10      ;
+; main:inst7|degree[2]                    ; 10      ;
+; main:inst7|lastsign2                    ; 8       ;
+; main:inst7|mystate[0]                   ; 41      ;
+; main:inst7|mystate[1]                   ; 30      ;
+; main:inst7|lastsign3                    ; 2       ;
+; main:inst7|initialSpeed[3]              ; 5       ;
+; main:inst7|initialSpeed[2]              ; 5       ;
+; main:inst7|initialSpeed[1]              ; 5       ;
+; main:inst7|initialSpeed[0]              ; 4       ;
 ; Total number of inverted registers = 16 ;         ;
 +-----------------------------------------+---------+
 
@@ -408,30 +409,31 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top|avoidance:inst2|degree[1]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst4|cnt[2]          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst5|cnt[3]          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst12|cnt[1]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst14|cnt[5]         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|txd:inst3|count[2]             ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|Correspond:inst11|byteCount[3] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|main:inst13|initialSpeed[6]    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|main:inst13|initialSpeed[4]    ;
-; 16:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; Yes        ; |top|Correspond:inst11|data[0]      ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |top|Correspond:inst11|data[5]      ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |top|beep:inst6|counter[8]          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |top|main:inst13|display[4]         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|avoidance:inst2|degree[6]      ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |top|main:inst13|led[1]             ;
-; 23:1               ; 3 bits    ; 45 LEs        ; 6 LEs                ; 39 LEs                 ; Yes        ; |top|main:inst13|target2[2]         ;
-; 31:1               ; 2 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |top|main:inst13|speed[6]           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|main:inst13|initialSpeed[2]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |top|main:inst13|mystate[0]         ;
-; 31:1               ; 2 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |top|main:inst13|speed[3]           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top|avoidance:inst2|mode           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst4|cnt[5]          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst5|cnt[7]          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst12|cnt[2]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|Distance:inst14|cnt[1]         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|txd:inst3|count[0]             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top|main:inst7|dotMatrix[2]        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|Correspond:inst11|byteCount[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|main:inst7|initialSpeed[6]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|main:inst7|initialSpeed[5]     ;
+; 16:1               ; 5 bits    ; 50 LEs        ; 30 LEs               ; 20 LEs                 ; Yes        ; |top|Correspond:inst11|data[3]      ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |top|Correspond:inst11|data[6]      ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |top|beep:inst6|counter[7]          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |top|avoidance:inst2|degree[2]      ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |top|main:inst7|led[1]              ;
+; 23:1               ; 3 bits    ; 45 LEs        ; 6 LEs                ; 39 LEs                 ; Yes        ; |top|main:inst7|target2[2]          ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; Yes        ; |top|main:inst7|speed[5]            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|main:inst7|initialSpeed[0]     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |top|main:inst7|mystate[0]          ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 20 LEs               ; 22 LEs                 ; Yes        ; |top|main:inst7|speed[3]            ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top|Digital:inst|Mux0              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|main:inst13|degree             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |top|main:inst13|state              ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 18 LEs               ; 15 LEs                 ; No         ; |top|main:inst13|backStatus         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|main:inst7|degree              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|main:inst7|dotMatrix           ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |top|main:inst7|state               ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 18 LEs               ; 15 LEs                 ; No         ; |top|main:inst7|backStatus          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
@@ -578,7 +580,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -588,7 +590,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Wed Jul 18 11:51:36 2018
+    Info: Processing started: Thu Jul 19 10:41:31 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testTotal -c parking
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ws2812_release.bdf
@@ -629,6 +631,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file bluetoo
     Info (12023): Found entity 1: blueTooth
 Info (12021): Found 1 design units, including 1 entities, in source file avoidance.v
     Info (12023): Found entity 1: avoidance
+Info (12021): Found 1 design units, including 1 entities, in source file testspeed2.v
+    Info (12023): Found entity 1: testSpeed2
 Warning (10236): Verilog HDL Implicit Net warning at lcd2.v(111): created implicit net for "write_flag"
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Warning (275011): Block or symbol "beep" of instance "inst6" overlaps another block or symbol
@@ -647,40 +651,40 @@ Warning (10230): Verilog HDL assignment warning at divider.v(101): truncated val
 Warning (10230): Verilog HDL assignment warning at divider.v(110): truncated value with size 32 to match size of target (17)
 Info (12128): Elaborating entity "Correspond" for hierarchy "Correspond:inst11"
 Warning (10230): Verilog HDL assignment warning at Correspond.v(57): truncated value with size 32 to match size of target (4)
-Info (12128): Elaborating entity "main" for hierarchy "main:inst13"
-Warning (10036): Verilog HDL or VHDL warning at main.v(39): object "last" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main.v(50): object "resetState" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at main.v(84): truncated value with size 32 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at main.v(106): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at main.v(226): truncated value with size 32 to match size of target (24)
+Info (12128): Elaborating entity "main" for hierarchy "main:inst7"
+Warning (10036): Verilog HDL or VHDL warning at main.v(40): object "last" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at main.v(51): object "resetState" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at main.v(85): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(107): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at main.v(221): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(247): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at main.v(252): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(257): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(268): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(272): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(276): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(280): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(300): truncated value with size 32 to match size of target (31)
-Warning (10230): Verilog HDL assignment warning at main.v(303): truncated value with size 32 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at main.v(350): truncated value with size 32 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at main.v(370): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(375): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(386): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(390): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(394): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(398): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(412): truncated value with size 32 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at main.v(416): truncated value with size 32 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at main.v(447): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main.v(460): truncated value with size 32 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at main.v(523): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at main.v(535): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at main.v(263): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(267): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(271): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(275): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(301): truncated value with size 32 to match size of target (31)
+Warning (10230): Verilog HDL assignment warning at main.v(304): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(351): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(371): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(376): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(387): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(391): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(395): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(399): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(413): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(417): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(448): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(461): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at main.v(524): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at main.v(536): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "avoidance" for hierarchy "avoidance:inst2"
 Info (12128): Elaborating entity "Distance" for hierarchy "Distance:inst12"
 Warning (10230): Verilog HDL assignment warning at Distance.v(13): truncated value with size 32 to match size of target (8)
 Info (12128): Elaborating entity "testSpeed" for hierarchy "testSpeed:inst8"
-Warning (10230): Verilog HDL assignment warning at testSpeed.v(19): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at testSpeed.v(23): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at testSpeed.v(27): truncated value with size 32 to match size of target (27)
+Warning (10230): Verilog HDL assignment warning at testSpeed.v(20): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at testSpeed.v(25): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at testSpeed.v(29): truncated value with size 32 to match size of target (27)
 Info (12128): Elaborating entity "blueTooth" for hierarchy "blueTooth:inst9"
 Info (12128): Elaborating entity "PWM" for hierarchy "PWM:inst19"
 Warning (10230): Verilog HDL assignment warning at PWM.v(15): truncated value with size 32 to match size of target (8)
@@ -696,6 +700,14 @@ Warning (10230): Verilog HDL assignment warning at Digital.v(11): truncated valu
 Warning (10230): Verilog HDL assignment warning at Digital.v(12): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at Digital.v(13): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at Digital.v(14): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "testSpeed2" for hierarchy "testSpeed2:inst1"
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(8): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(20): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(21): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(22): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(23): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(26): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at testSpeed2.v(29): truncated value with size 32 to match size of target (14)
 Info (278001): Inferred 6 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Digital:inst|Div1"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Digital:inst|Mod0"
@@ -767,13 +779,13 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "Signs[0]"
     Warning (15610): No output dependent on input pin "Touch[3]"
     Warning (15610): No output dependent on input pin "Touch[2]"
-Info (21057): Implemented 1183 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1218 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 31 input pins
-    Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 1124 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 66 warnings
-    Info: Peak virtual memory: 550 megabytes
-    Info: Processing ended: Wed Jul 18 11:51:44 2018
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 1156 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 73 warnings
+    Info: Peak virtual memory: 546 megabytes
+    Info: Processing ended: Thu Jul 19 10:41:39 2018
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
 

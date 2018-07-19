@@ -1,0 +1,10 @@
+module test(ii, oo, clk_50MHz);
+	input clk_50Mhz;
+	input reg ii;
+	output reg oo;
+
+always@(posedge clk_50Mhz) begin
+	oo = ii;
+end
+
+endmodule

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for parking
-Wed Jul 18 11:52:27 2018
+Thu Jul 19 10:42:01 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Jul 18 11:52:27 2018 ;
+; EDA Netlist Writer Status ; Successful - Thu Jul 19 10:42:01 2018 ;
 ; Revision Name             ; parking                               ;
 ; Top-level Entity Name     ; top                                   ;
 ; Family                    ; Cyclone II                            ;
@@ -84,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Wed Jul 18 11:52:25 2018
+    Info: Processing started: Thu Jul 19 10:42:00 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off testTotal -c parking
 Info (204026): Generated files "parking.vho", "parking_fast.vho", "parking_vhd.sdo" and "parking_vhd_fast.sdo" in directory "C:/MyDownloads/analogEXP/car_/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 459 megabytes
-    Info: Processing ended: Wed Jul 18 11:52:27 2018
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 475 megabytes
+    Info: Processing ended: Thu Jul 19 10:42:01 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

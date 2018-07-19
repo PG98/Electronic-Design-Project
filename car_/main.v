@@ -20,13 +20,14 @@ module main
 	output reg direction,
 	output reg beepEnable,
 //	output reg [13:0] display,
-	output reg [7:0] display,	
+	output reg [13:0] display,	
 	output reg [7:0] led,
 	input [7:0] backDistance,//后方超声波
 	input [13:0] inspeed,//测量得到的速度
 	input [3:0] downinfrared,//循迹红外
 	output reg [23:0] light,//WS2812
-	output reg [2:0] lcd_state
+	output reg [2:0] lcd_state,
+	output reg [2:0] dotMatrix
 );
 
 reg [7:0] command;
@@ -115,49 +116,37 @@ end
 
 // 是否改成 10k 频率
 always @ (posedge clk_50M) begin
-	//display=inspeed;
-	//speed=button;
 	led[6:5]=state;
-	display = backDistance;
+	//display = forwardDistance;
+	if(receiveData[7:4]==4'b0001)begin
+		if(degree!=60 || direction==0) dotMatrix=0;//!
+		else dotMatrix=1;//ok
+	end
+	else if(receiveData[7:4]==4'b1001)begin
+		dotMatrix=2;//parking
+	end
+	else begin
+		if(speed==0) dotMatrix=3;//speed = 0
+		else if(degree==60 && direction==1) dotMatrix=4;
+		else if(degree==60 && direction==0) dotMatrix=5;
+		else if(degree<60) dotMatrix=6;
+		else if(degree>60) dotMatrix=7;
+		else ;
+	end
+	
 	if(state==0) begin// 完全控制(红色)
-	/*
-		lcd_state=3'b100;
-		display=forwardDistance;
-		beepEnable=0;
-		light=60*256;//红色
-		case(receiveData[1:0])//speed
-			2'b00: speed=0;
-			2'b10: speed=30;
-			2'b01: speed=15;
-			2'b11: speed=0;
-		endcase
-		case (receiveData[3:2])//degree
-			2'b00: degree=95;
-			2'b11: degree=95;
-			2'b01: degree=60;
-			2'b10: degree=120;
-		endcase
-		case(receiveData[4])//direction
-			1'b0: direction=1;
-			1'b1: direction=0;
-		endcase
-	*/
 		//遥控
 		if(receiveData[5:4]==2'b00) begin
+			display = forwardDistance;
 			if (receiveData[3:2]==2'b01) degree=30; // right turn
 			else if(receiveData[3:2]==2'b10)degree=90;//
 			else degree=60;
-			//correction
-			//if (receiveData[3:2]==2'b01) degree=57; // right turn
-			//else if(receiveData[3:2]==2'b10)degree=58;//
-			//else degree=59;
-
 			if (forwardDistance>20 && receiveData[1:0]==2'b01) begin
-				speed = 35;
+				speed = 30;
 				direction = 1;
 			end
 			else if (forwardDistance>20 && receiveData[1:0]==2'b10) begin
-				speed = 35;
+				speed = 30;
 				direction = 0;
 			end
 			else begin
@@ -168,6 +157,7 @@ always @ (posedge clk_50M) begin
 		//避障
 		else if(receiveData[5:4]==2'b01) begin 
 			// dir mode ctr
+			display = forwardDistance;
 			degree = dir;
 			direction = mode;
 			speed = speed_ctr;
@@ -193,14 +183,19 @@ always @ (posedge clk_50M) begin
 		//resetState=1;
 		//mycode begins
 		if(mystate==2'b00) begin//走黑线(蓝色)
+			//display = leftDistance;
 			lcd_state=3'b010;
 			light=80;//blue
 			led[1:0]=downinfrared[2:1];
 			//speed=15;
 			direction=1;
-			if(!downinfrared[2] && !downinfrared[1]) begin//两个都在黑线外，直走
+			if(forwardDistance<15 || leftDistance<15 || rightDistance<15) begin
+				speed = 0;
+				degree = 60;
+			end
+			else if(!downinfrared[2] && !downinfrared[1]) begin//两个都在黑线外，直走
 				degree=60;
-				speed = 17;
+				speed = 15;
 				//led[7:2]=6'b000000;
 			end
 			else if(downinfrared[2] && !downinfrared[1]) begin//
@@ -209,7 +204,7 @@ always @ (posedge clk_50M) begin
 				//led[7:2]=6'b000000;
 			end
 			else if(!downinfrared[2] && downinfrared[1]) begin
-				degree=90;
+				degree=105;
 				speed = 14;
 				//led[7:2]=6'b000000;
 			end
@@ -222,7 +217,7 @@ always @ (posedge clk_50M) begin
 		
 		else if(mystate==2'b01) begin
 		//自动泊车(紫色)
-				//display = backDistance;
+				display = backDistance;
 				light=5*256*256+167*256+82;
 				if(flag != receiveData[0]) backStatus = 0;
 				flag = receiveData[0];
@@ -290,6 +285,12 @@ always @ (posedge clk_50M) begin
 				last=Delaying;
 				last2=Delaying2;
 			end
+		//调速模式
+		else if(mystate==2'b11)begin
+			speed = button;
+			display = inspeed;
+		end
+			
 		//mycode ends
 	end
 

@@ -5,5 +5,5 @@ Warning (10268): Verilog HDL information at rxd.v(10): always construct contains
 Warning (10268): Verilog HDL information at divider.v(26): always construct contains both blocking and non-blocking assignments
 Warning (10268): Verilog HDL information at beep.v(14): always construct contains both blocking and non-blocking assignments
 Warning (10268): Verilog HDL information at beep.v(44): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at main.v(94): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at main.v(96): always construct contains both blocking and non-blocking assignments
 Warning (10268): Verilog HDL information at lcd.v(52): always construct contains both blocking and non-blocking assignments

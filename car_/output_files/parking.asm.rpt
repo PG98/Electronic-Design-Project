@@ -1,5 +1,5 @@
 Assembler report for parking
-Wed Jul 18 11:52:19 2018
+Thu Jul 19 10:41:54 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jul 18 11:52:19 2018 ;
+; Assembler Status      ; Successful - Thu Jul 19 10:41:54 2018 ;
 ; Revision Name         ; parking                               ;
 ; Top-level Entity Name ; top                                   ;
 ; Family                ; Cyclone II                            ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                         ;
 +----------------+-----------------------------------------------------------------+
 ; Device         ; EP2C5Q208C8                                                     ;
-; JTAG usercode  ; 0x00127EB5                                                      ;
-; Checksum       ; 0x00127EB5                                                      ;
+; JTAG usercode  ; 0x001295D9                                                      ;
+; Checksum       ; 0x001295D9                                                      ;
 +----------------+-----------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+-------------------------------------------------------------+
 ; Device             ; EPCS4                                                       ;
 ; JTAG usercode      ; 0x00000000                                                  ;
-; Checksum           ; 0x073FC640                                                  ;
+; Checksum           ; 0x07404A57                                                  ;
 ; Compression Ratio  ; 2                                                           ;
 +--------------------+-------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Wed Jul 18 11:52:18 2018
+    Info: Processing started: Thu Jul 19 10:41:52 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off testTotal -c parking
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 483 megabytes
-    Info: Processing ended: Wed Jul 18 11:52:19 2018
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Jul 19 10:41:54 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
